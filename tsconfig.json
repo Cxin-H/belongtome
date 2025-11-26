@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    // 新增：路径别名配置（和 Vite 保持一致）
+    "baseUrl": ".",  // 基础路径为项目根目录
+    "paths": {
+      "@/*": ["src/*"]  // @/* 对应 src/*
+    },
+    // 新增：确保识别 Vue 相关类型
+    "types": ["vite/client", "unplugin-vue-components/client"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
