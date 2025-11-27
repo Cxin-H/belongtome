@@ -1,6 +1,6 @@
 <template>
     <div class="welcome-container">
-      <a-card class="welcome-card" bordered="false">
+      <a-card class="welcome-card" :bordered="false">
         <div class="welcome-header">
           <a-avatar size="large" icon="logo" style="background: #1890ff" />
           <h1 class="project-name">Vue3 + Ant Design Vue 项目</h1>

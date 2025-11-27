@@ -6,7 +6,7 @@
                 <a-icon type="menu-unfold" v-if="userStore.sidebarCollapsed" />
             </div>
 
-            <a-menu mode="inline" :selected-keys="[$route.path]" :open-keys="openKeys" @open-change="handleOpenChange"
+            <a-menu mode="inline" :selected-keys="[$route.path]" :open-keys="openKeys" @openChange="handleOpenChange"
                 @click="handleMenuClick">
                 <template v-for="route in routes" :key="route.path">
                     <!-- 修复：使用 (route.meta as any)?.hidden 绕过类型检查，确保访问 meta 中的 hidden -->
@@ -78,7 +78,7 @@ const routes = computed(() => {
     return router.getRoutes().find(item => item.components?.default === MainLayout)?.children || []
 })
 
-const handleOpenChange = (keys: string[]) => {
+const handleOpenChange = (keys: any) => {
     openKeys.value = keys
 }
 
