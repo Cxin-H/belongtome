@@ -9,10 +9,17 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    // 修复 3: 移除 allowImportingTsExtensions，因为它需要 noEmit: true
+    // "allowImportingTsExtensions": true, 
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    
+    // 修复 4: 设为 false 或移除，以便 composite 模式工作
+    "noEmit": false,
+    // 修复 5: 添加 composite: true
+    "composite": true,
+    // 可选: 只生成声明文件，不生成 JS，保持目录干净
+    "emitDeclarationOnly": true,
 
     /* Linting */
     "strict": true,
