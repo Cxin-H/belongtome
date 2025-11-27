@@ -20,7 +20,8 @@ export const useUserStore = defineStore('user', {
   getters: {
     // 获取用户角色文本
     roleText: (state) => {
-      return state.role === 'guest' ? '访客' : '管理员'
+      // 修复：这里应该是 state.userInfo.role，而不是 state.role
+      return state.userInfo.role === 'guest' ? '访客' : '管理员'
     }
   },
 
@@ -40,19 +41,7 @@ export const useUserStore = defineStore('user', {
     toggleTheme() {
       this.theme = this.theme === 'light' ? 'dark' : 'light'
       // 这里可以添加主题切换的副作用（如修改全局样式变量）
-    },
-
-    // 后续扩展登录功能时，可新增登录方法：
-    // login(userData: { username: string; avatar: string }) {
-    //   this.userInfo = userData
-    //   this.role = 'admin'  // 登录后切换为管理员角色
-    // },
-
-    // 后续扩展退出登录功能时，可新增退出方法：
-    // logout() {
-    //   this.userInfo = { username: '访客', avatar: 'user', role: 'guest' }
-    //   this.sidebarCollapsed = false
-    // }
+    }
   },
   persist: true
 })
