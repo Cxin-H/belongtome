@@ -1,0 +1,1 @@
+import{_ as o,c as n,a as s,o as t}from"./index-CeQpBwUL.js";const a={},r={class:"dashboard"};function c(d,e){return t(),n("div",r,[...e[0]||(e[0]=[s("h1",null,"控制台内容",-1),s("p",null,"测试仪表盘是否显示",-1)])])}const _=o(a,[["render",c]]);export{_ as default};
