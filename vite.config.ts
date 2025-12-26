@@ -6,6 +6,7 @@ import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import path from 'path'
 
 export default defineConfig({
+  base: '/belongtome/',
   plugins: [
     Vue(),
     Components({

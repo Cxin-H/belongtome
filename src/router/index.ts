@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHashHistory, createWebHistory, RouteRecordRaw } from "vue-router";
 import MainLayout from "@/components/Layout/MainLayout.vue"; // 主布局
 import Welcome from "@/views/Welcome/Welcome.vue"; // 新增：欢迎页
 import NotFound from "@/views/NotFound/404.vue";
@@ -51,7 +51,7 @@ const routes: RouteRecordRaw[] = [
 
 // 创建路由实例
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes,
 });
 
